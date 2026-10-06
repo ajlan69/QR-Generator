@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Create free custom QR codes: dot and rounded shapes, gradients, custom eyes, logos, frames and transparent backgrounds. Download as PNG or SVG.">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/qr-code-generator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Custom QR Code Generator">
+<meta property="og:description" content="Design QR codes with shapes, gradients, logos and frames, right in your browser.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/qr-code-generator/">
+<title>Free Custom QR Code Generator – Shapes, Gradients, Logos | QuickToolBox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15112b;--ink2:#251f47;--line2:rgba(255,255,255,.12);--ac:#8b5cf6;--ac2:#ec4899;--peach:#ffb38a;--text:#1c1636;--muted:#5f5a78}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sora,system-ui,sans-serif;color:var(--text);line-height:1.5;min-height:100vh;background:linear-gradient(140deg,#f1eaff,#ffe8e0 70%,#fff3d9) fixed}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
+:focus-visible{outline:3px solid var(--peach);outline-offset:2px}
+.hd{background:#fff;border-bottom:1px solid rgba(0,0,0,.08)}
+.nav{max-width:1240px;margin:auto;padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:19px;text-decoration:none}.brand span{color:var(--ac)}
+.cta{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:999px}
+main{max-width:1240px;margin:auto;padding:28px 20px}
+.gen{background:var(--ink);color:#fff;border-radius:30px;padding:36px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;box-shadow:0 30px 70px rgba(60,30,120,.25)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:22px}
+.tab{border:0;background:none;color:var(--peach);padding:9px 14px;border-radius:999px;font-size:14px;font-weight:600}
+.tab[aria-selected=true]{background:var(--ink2);color:#fff}
+h2.h{margin:0 0 14px;font-size:22px}
+.pill{background:#fff;border-radius:999px;height:48px;padding:0 20px;display:flex;align-items:center}
+.pill input{flex:1;border:0;outline:0;background:none;height:100%;font-size:16px;color:#222;min-width:0}
+.pill:focus-within{box-shadow:0 0 0 3px var(--peach)}
+.hint{font-size:13px;color:#b9b3d6;margin:10px 0 4px}.err{color:#ff9b9b;font-size:13px;min-height:18px}
+.pre{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
+.pre button{border:2px solid transparent;border-radius:12px;background:var(--ink2);color:#fff;padding:6px 12px 6px 6px;display:flex;align-items:center;gap:8px;font-size:13px}
+.pre i{width:24px;height:24px;border-radius:8px;display:block}
+.pre button:hover{border-color:var(--peach)}
+details.sec{border-top:1px solid var(--line2);padding:12px 0}
+details.sec summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;color:var(--peach)}
+details.sec summary::-webkit-details-marker{display:none}
+details.sec summary::after{content:"+"}details.sec[open] summary::after{content:"−"}
+.row{margin-top:14px}.row>label,.lb{display:block;font-size:12px;color:#c8c2e6;margin-bottom:6px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:flex;align-items:center;justify-content:center;min-width:42px;height:38px;padding:0 12px;border-radius:10px;background:var(--ink2);border:2px solid transparent;font-size:13px}
+.chip input:checked+span{border-color:var(--ac);background:#3a2f78}
+.chip input:focus-visible+span{outline:3px solid var(--peach)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cr{display:flex;gap:6px}.cr input[type=color]{width:40px;height:38px;border:0;border-radius:8px;padding:2px;background:#fff;flex:none}
+input[type=text].tx,select{height:38px;width:100%;min-width:0;border:0;border-radius:8px;padding:0 10px;background:#fff;color:#222}
+input[type=range]{width:100%;accent-color:var(--ac)}
+.sw{display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer}
+.sw input{width:18px;height:18px;accent-color:var(--ac)}
+.up{display:inline-block;background:var(--ink2);border:1px dashed #6b5fb5;border-radius:10px;padding:8px 14px;font-size:13px;cursor:pointer}
+.ct{font-size:12px;margin-top:8px;min-height:16px}
+.prev{position:sticky;top:20px;align-self:start;text-align:center}
+.qc{width:min(100%,330px);margin:0 auto;background:#fff;border-radius:20px;padding:14px;overflow:hidden}
+.qc.tr{background:conic-gradient(#e5e1f5 25%,#fff 0 50%,#e5e1f5 0 75%,#fff 0) 0 0/16px 16px}
+.qc.sm{opacity:.9}.qc svg{display:block;width:100%;height:auto}
+.act{display:flex;gap:8px;width:min(100%,330px);margin:18px auto 0}
+.save{flex:1;height:48px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;font-weight:700}
+.ic{height:48px;padding:0 14px;border:0;border-radius:12px;background:#e9e5fb;color:var(--ink);font-weight:600;font-size:13px}
+button:disabled{opacity:.45;cursor:not-allowed}
+.note{font-size:12px;color:#b9b3d6;margin:12px 0 0;min-height:18px}
+.intro{text-align:center;padding:44px 0 6px}.intro h1{margin:0 0 8px;font-size:clamp(28px,4vw,42px);letter-spacing:-.02em}
+.intro p{margin:auto;max-width:600px;color:var(--muted);font-size:17px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.card{background:rgba(255,255,255,.75);border-radius:20px;padding:24px}.card h2{margin:0 0 8px;font-size:19px}
+.card p,.card li{color:var(--muted);font-size:14px}.card ol{margin:0;padding-left:18px}
+.faq{grid-column:1/-1}details.q{border-top:1px solid rgba(0,0,0,.1);padding:12px 0}
+details.q summary{cursor:pointer;font-weight:600;font-size:14px}details.q p{margin:8px 0 0}
+footer{background:#fff;margin-top:36px}.ft{max-width:1240px;margin:auto;padding:22px 20px;display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+@media(max-width:940px){.gen{grid-template-columns:1fr;padding:24px 18px}.prev{position:static}.info{grid-template-columns:1fr}}
+@media(max-width:520px){main{padding:14px 10px}.g2,.g3{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@2.0.4/dist/qrcode.js"></script>
+</head>
+<body>
+<header class="hd"><nav class="nav" aria-label="Primary"><a class="brand" href="./">Quick<span>ToolBox</span></a><a class="cta" href="./">All tools</a></nav></header>
+<main>
+<section class="gen" aria-label="QR code generator">
+<div>
+ <div class="tabs" role="tablist" id="tabs"></div>
+ <h2 class="h" id="hd">Redirect to an existing web URL</h2>
+ <div class="pill"><input id="pl" type="text" maxlength="2953" autocomplete="off" spellcheck="false" aria-labelledby="hd"></div>
+ <p class="hint" id="hint"></p><div class="err" id="err" role="alert"></div>
+ <div class="lb" style="margin-top:10px">Quick styles</div><div class="pre" id="pre"></div>
+
+ <details class="sec" open><summary>Shapes</summary>
+  <div class="row"><span class="lb">Dots</span><div class="chips" data-n="mod" data-d="dot" data-o="sq:■ Square|rd:▢ Rounded|dot:● Dots|dia:◆ Diamond"></div></div>
+  <div class="g2"><div class="row"><span class="lb">Eye frame</span><div class="chips" data-n="ef" data-d="rd" data-o="sq:■|rd:▢|ci:●"></div></div>
+  <div class="row"><span class="lb">Eye center</span><div class="chips" data-n="eb" data-d="ci" data-o="sq:■|rd:▢|ci:●"></div></div></div>
+ </details>
+ <details class="sec" open><summary>Colors</summary>
+  <div class="row"><span class="lb">Fill</span><div class="chips" data-n="ft" data-d="linear" data-o="solid:Solid|linear:Linear gradient|radial:Radial gradient"></div></div>
+  <div class="g3 row"><div><label for="c1">Color 1</label><div class="cr"><input type="color" id="c1"><input class="tx" type="text" id="c1x" maxlength="7"></div></div>
+  <div><label for="c2">Color 2</label><div class="cr"><input type="color" id="c2"><input class="tx" type="text" id="c2x" maxlength="7"></div></div>
+  <div><label for="ang">Angle <span id="angv">45°</span></label><input type="range" id="ang" min="0" max="360" value="45"></div></div>
+  <div class="g2 row"><div><label for="bg">Background</label><div class="cr"><input type="color" id="bg"><input class="tx" type="text" id="bgx" maxlength="7"></div><label class="sw" style="margin-top:8px"><input type="checkbox" id="tr">Transparent</label></div>
+  <div><label class="sw"><input type="checkbox" id="em" checked>Eyes match QR color</label>
+  <div class="cr" style="margin-top:8px"><input type="color" id="ec1" value="#15112b" title="Eye frame color"><input type="color" id="ec2" value="#8b5cf6" title="Eye center color"></div></div></div>
+  <div class="ct" id="ct" aria-live="polite"></div>
+ </details>
+ <details class="sec"><summary>Logo or icon</summary>
+  <div class="row"><div class="chips" data-n="lg" data-d="none" data-o="none:None|★:★|♥:♥|✉:✉|☎:☎|⌂:⌂|✔:✔|➤:➤|♪:♪|☺:☺"></div></div>
+  <div class="g2 row"><div><label class="up">Upload image<input type="file" id="lf" accept="image/*" hidden></label></div>
+  <div><label for="lc">Icon color</label><div class="cr"><input type="color" id="lc" value="#6d28d9"></div></div></div>
+  <div class="row"><label for="ls">Logo size <span id="lsv">20%</span></label><input type="range" id="ls" min="12" max="30" value="20"></div>
+  <p class="hint">A logo switches error correction to High so the code stays scannable.</p>
+ </details>
+ <details class="sec"><summary>Frame</summary>
+  <div class="row"><label class="sw"><input type="checkbox" id="fr">Add a frame with a label</label></div>
+  <div class="g2 row"><div><label for="ft2">Label</label><input class="tx" type="text" id="ft2" value="SCAN ME" maxlength="24"></div>
+  <div><label for="fc">Frame color</label><div class="cr"><input type="color" id="fc" value="#6d28d9"></div></div></div>
+ </details>
+ <details class="sec"><summary>Advanced</summary>
+  <div class="g3 row"><div><label for="ecc">Error correction</label><select id="ecc"><option value="L">Low</option><option value="M" selected>Medium</option><option value="Q">Quartile</option><option value="H">High</option></select></div>
+  <div><label for="qz">Quiet zone <span id="qzv">4</span></label><input type="range" id="qz" min="1" max="8" value="4"></div>
+  <div><label for="sz">PNG size</label><select id="sz"><option>256</option><option>512</option><option selected>1024</option><option>2048</option></select></div></div>
+ </details>
+</div>
+<div class="prev">
+ <div class="qc sm" id="qc"></div>
+ <div class="act"><button class="save" id="png" disabled>Save PNG</button><button class="ic" id="svg" disabled>SVG</button><button class="ic" id="cp" disabled>Copy</button></div>
+ <p class="note" id="note" role="status"></p>
+</div>
+</section>
+
+<section class="intro"><h1>Free Custom QR Code Generator</h1><p>Design a QR code with your own shapes, colors, logo and frame, then download it as PNG or SVG. No account needed.</p></section>
+<div class="info">
+ <div class="card"><h2>What is a QR code?</h2><p>A QR code is a two-dimensional barcode that stores a web address, text or contact detail. A phone camera reads it and opens what is encoded.</p></div>
+ <div class="card"><h2>How to create one</h2><ol><li>Enter a URL or text.</li><li>Pick a quick style, or adjust shapes, colors, logo and frame.</li><li>Scan the preview with your phone.</li><li>Save as PNG or SVG.</li></ol></div>
+ <div class="card"><h2>What it's good for</h2><p>Links, menus, event pages, social profiles, contact info, product pages and posters.</p></div>
+ <div class="card faq"><h2>Frequently asked questions</h2>
+ <details class="q"><summary>Is it free?</summary><p>Yes. No account is needed to create or download QR codes.</p></details>
+ <details class="q"><summary>Is my content uploaded?</summary><p>No. The QR code, including any logo you add, is made in your browser.</p></details>
+ <details class="q"><summary>Will a styled QR code still scan?</summary><p>Usually, if there's strong contrast between the code and background and you leave a quiet zone. Dark on light scans best, so avoid inverted colors. Always test the final code with a phone before printing.</p></details>
+ <details class="q"><summary>Why does a logo change the error correction?</summary><p>A logo covers part of the code. High error correction lets scanners recover that missing data.</p></details></div>
+</div>
+</main>
+<footer><div class="ft"><div>© 2026 QuickToolBox</div><a href="./">Tools</a></div></footer>
+<script>
+(()=>{"use strict";
+const $=i=>document.getElementById(i),g=i=>$(i).value,ck=i=>$(i).checked,rv=n=>document.querySelector(`input[name=${n}]:checked`).value;
+const TABS={url:["URL","Redirect to an existing web URL","Enter URL","Try something like https://example.com/",""],text:["Text","Encode plain text","Enter text","Any text up to 2,953 characters",""],email:["Email","Open a new email","Enter email address","Example: hello@example.com","mailto:"],phone:["Phone","Start a phone call","Enter phone number","Include the country code, like +91…","tel:"],sms:["SMS","Start a text message","Enter phone number","Include the country code, like +91…","sms:"]};
+let tab="url",logoImg=null,last=null;
+Object.keys(TABS).forEach(k=>{const b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.dataset.t=k;b.textContent=TABS[k][0];b.onclick=()=>setTab(k);$("tabs").appendChild(b)});
+function setTab(k){tab=k;const t=TABS[k];document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.t==k));$("hd").textContent=t[1];$("pl").placeholder=t[2];$("hint").textContent=t[3];render()}
+document.querySelectorAll(".chips").forEach(c=>{c.innerHTML=c.dataset.o.split("|").map(o=>{const[v,l]=o.split(":");return`<label class="chip"><input type="radio" name="${c.dataset.n}" value="${v}"${v==c.dataset.d?" checked":""}><span>${l}</span></label>`}).join("")});
+const hexOk=v=>/^#[0-9a-f]{6}$/i.test(v.trim());
+[["c1","c1x"],["c2","c2x"],["bg","bgx"]].forEach(([a,b])=>{$(a).oninput=()=>{$(b).value=g(a).toUpperCase();render()};$(b).onchange=()=>{hexOk(g(b))?($(a).value=g(b).trim().toLowerCase(),$(b).value=g(b).trim().toUpperCase()):$(b).value=g(a).toUpperCase();render()}});
+const PRE=[{n:"Classic",c1:"#000000",c2:"#000000",ft:"solid",mod:"sq",ef:"sq",eb:"sq",bg:"#ffffff"},{n:"Violet",c1:"#6d28d9",c2:"#db2777",ft:"linear",mod:"dot",ef:"rd",eb:"ci",bg:"#ffffff"},{n:"Sunset",c1:"#ea580c",c2:"#be123c",ft:"linear",mod:"rd",ef:"rd",eb:"rd",bg:"#fff7ed"},{n:"Ocean",c1:"#0e7490",c2:"#1d4ed8",ft:"linear",mod:"dia",ef:"sq",eb:"sq",bg:"#ecfeff"},{n:"Forest",c1:"#166534",c2:"#166534",ft:"solid",mod:"dot",ef:"ci",eb:"ci",bg:"#f0fdf4"},{n:"Ink",c1:"#1e1b4b",c2:"#4338ca",ft:"radial",mod:"rd",ef:"sq",eb:"rd",bg:"#ffffff"}];
+const setR=(n,v)=>{const e=document.querySelector(`input[name=${n}][value="${v}"]`);if(e)e.checked=true};
+function apply(p){["c1","c2","bg"].forEach(k=>{$(k).value=p[k];$(k+"x").value=p[k].toUpperCase()});["ft","mod","ef","eb"].forEach(k=>setR(k,p[k]));$("em").checked=true;$("tr").checked=false;render()}
+PRE.forEach(p=>{const b=document.createElement("button");b.type="button";b.innerHTML=`<i style="background:linear-gradient(135deg,${p.c1},${p.c2})"></i>${p.n}`;b.onclick=()=>apply(p);$("pre").appendChild(b)});
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const lum=h=>h.slice(1).match(/.{2}/g).map(v=>parseInt(v,16)/255).map(c=>c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4)).reduce((s,c,i)=>s+c*[.2126,.7152,.0722][i],0);
+const cr=(a,b)=>{const x=lum(a),y=lum(b);return(Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+function build(t,e){if(typeof window.qrcode!=="function")throw 0;window.qrcode.stringToBytes=v=>Array.from(new TextEncoder().encode(v));const q=window.qrcode(0,e);q.addData(t,"Byte");q.make();const n=q.getModuleCount();return Array.from({length:n},(_,r)=>Array.from({length:n},(_,c)=>q.isDark(r,c)))}
+const MP={sq:(x,y)=>`M${x} ${y}h10v10h-10z`,rd:(x,y)=>`M${x+3} ${y}h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3v-4a3 3 0 0 1 3-3z`,dot:(x,y)=>`M${x+.6} ${y+5}a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0-8.8 0z`,dia:(x,y)=>`M${x+5} ${y}l5 5l-5 5l-5-5z`};
+function es(t,x,y,w){const r=t=="ci"?w/2:t=="rd"?w*.28:0,s=w-2*r,a=(dx,dy)=>r?`a${r} ${r} 0 0 1 ${dx} ${dy}`:"";return`M${x+r} ${y}h${s}${a(r,r)}v${s}${a(-r,r)}h${-s}${a(-r,-r)}v${-s}${a(r,-r)}z`}
+function mk(m){
+ const n=m.length,q=+g("qz"),W=(n+2*q)*10,fr=ck("fr"),bar=fr?64:0,H=W+bar,tr=ck("tr"),bg=g("bg"),c1=g("c1"),c2=g("c2"),ft=rv("ft"),mod=rv("mod");
+ const F=ft=="solid"?c1:"url(#gr)",ef=ck("em")?F:g("ec1"),eb=ck("em")?F:g("ec2");
+ let s=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="QR code"><defs>`;
+ if(ft=="linear"){const a=+g("ang")*Math.PI/180,r=W/2;s+=`<linearGradient id="gr" gradientUnits="userSpaceOnUse" x1="${W/2-r*Math.cos(a)}" y1="${W/2-r*Math.sin(a)}" x2="${W/2+r*Math.cos(a)}" y2="${W/2+r*Math.sin(a)}"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>`}
+ if(ft=="radial")s+=`<radialGradient id="gr" gradientUnits="userSpaceOnUse" cx="${W/2}" cy="${W/2}" r="${W*.7}"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></radialGradient>`;
+ s+=`<clipPath id="k"><rect width="${W}" height="${H}" rx="${fr?24:0}"/></clipPath></defs><g clip-path="url(#k)">`;
+ if(!tr)s+=`<rect width="${W}" height="${H}" fill="${bg}"/>`;
+ const lg=logoImg||rv("lg")!="none",L=lg?Math.max(3,Math.round(n*g("ls")/100)):0,a0=Math.floor((n-L)/2);
+ let d="";
+ for(let r=0;r<n;r++)for(let c=0;c<n;c++){if(!m[r][c])continue;if((r<7&&c<7)||(r<7&&c>=n-7)||(r>=n-7&&c<7))continue;if(L&&r>=a0-1&&r<a0+L+1&&c>=a0-1&&c<a0+L+1)continue;d+=MP[mod]((c+q)*10,(r+q)*10)}
+ s+=`<path d="${d}" fill="${F}"/>`;
+ [[0,0],[n-7,0],[0,n-7]].forEach(([c,r])=>{const x=(c+q)*10,y=(r+q)*10;s+=`<path d="${es(rv("ef"),x,y,70)}${es(rv("ef"),x+10,y+10,50)}" fill="${ef}" fill-rule="evenodd"/><path d="${es(rv("eb"),x+20,y+20,30)}" fill="${eb}"/>`});
+ if(L){const x=(q+a0)*10,w=L*10,cx=x+w/2,bgc=tr?"#ffffff":bg;s+=`<rect x="${x}" y="${x}" width="${w}" height="${w}" rx="${w*.2}" fill="${bgc}"/>`;
+  if(logoImg)s+=`<image href="${logoImg}" x="${x+w*.1}" y="${x+w*.1}" width="${w*.8}" height="${w*.8}" preserveAspectRatio="xMidYMid meet"/>`;
+  else s+=`<text x="${cx}" y="${cx}" font-size="${w*.62}" text-anchor="middle" dominant-baseline="central" fill="${g("lc")}" font-family="Segoe UI Symbol,Arial,sans-serif">${esc(rv("lg"))}</text>`}
+ if(fr){const fc=g("fc");s+=`<rect x="4" y="4" width="${W-8}" height="${H-8}" rx="20" fill="none" stroke="${fc}" stroke-width="8"/><rect y="${W}" width="${W}" height="${bar}" fill="${fc}"/><text x="${W/2}" y="${W+bar/2}" font-size="30" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="${lum(fc)>.4?"#111":"#fff"}" font-family="Arial,sans-serif">${esc(g("ft2"))}</text>`}
+ return{svg:s+"</g></svg>",W,H,lg}}
+function render(){
+ $("angv").textContent=g("ang")+"°";$("lsv").textContent=g("ls")+"%";$("qzv").textContent=g("qz");
+ const v=g("pl").trim(),has=!!v,txt=has?TABS[tab][4]+v:"https://example.com";$("err").textContent="";
+ const hasLogo=logoImg||rv("lg")!="none";
+ let m;try{m=build(txt,hasLogo?"H":g("ecc"))}catch(e){$("err").textContent=e===0?"The QR encoder did not load. Check your connection and reload.":"Too long to encode. Shorten it or lower the error correction.";return}
+ last=mk(m);const qc=$("qc");qc.innerHTML=last.svg;qc.classList.toggle("tr",ck("tr"));qc.classList.toggle("sm",!has);
+ ["png","svg","cp"].forEach(i=>$(i).disabled=!has);
+ const lo=Math.min(cr(g("c1"),g("bg")),ft2()?cr(g("c2"),g("bg")):99),ct=$("ct");
+ if(ck("tr")){ct.textContent="Transparent background: make sure it sits on a light surface.";ct.style.color="#ffd27a"}
+ else{ct.textContent=lo<3?`Low contrast (${lo.toFixed(1)}:1). Darken the QR colors or lighten the background.`:lo<4.5?`Moderate contrast (${lo.toFixed(1)}:1). Higher scans more reliably.`:`Good contrast (${lo.toFixed(1)}:1).`;ct.style.color=lo<3?"#ff9b9b":lo<4.5?"#ffd27a":"#8ff08f"}
+ $("note").textContent=has?(hasLogo?"Logo added, so error correction is High. Scan to check.":"Scan it with your phone to check."):"Sample code. Type above to create yours."}
+const ft2=()=>rv("ft")!="solid";
+function blob(cb){const sz=+g("sz"),k=sz/last.W,cv=document.createElement("canvas");cv.width=sz;cv.height=Math.round(last.H*k);const im=new Image();im.onload=()=>{cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);cv.toBlob(cb,"image/png")};im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(last.svg)}
+function dl(b,n){const u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download=n;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+$("png").onclick=()=>last&&blob(b=>b&&dl(b,"quicktoolbox-qr.png"));
+$("svg").onclick=()=>last&&dl(new Blob([last.svg],{type:"image/svg+xml;charset=utf-8"}),"quicktoolbox-qr.svg");
+$("cp").onclick=()=>last&&blob(async b=>{try{await navigator.clipboard.write([new ClipboardItem({"image/png":b})]);$("note").textContent="Image copied."}catch(e){$("note").textContent="Copying isn't supported here. Use Save PNG."}});
+$("lf").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const cv=document.createElement("canvas"),s=Math.min(256,Math.max(im.width,im.height));cv.width=im.width*s/Math.max(im.width,im.height);cv.height=im.height*s/Math.max(im.width,im.height);cv.getContext("2d").drawImage(im,0,0,cv.width,cv.height);logoImg=cv.toDataURL("image/png");setR("lg","none");render()};im.src=r.result};r.readAsDataURL(f)};
+document.querySelectorAll("input[name=lg]").forEach(r=>r.addEventListener("change",()=>{logoImg=null}));
+document.querySelector(".gen").addEventListener("input",e=>{if(e.target.id!="lf")render()});
+document.querySelector(".gen").addEventListener("change",e=>{if(e.target.type=="radio"||e.target.tagName=="SELECT")render()});
+apply(PRE[1]);setTab("url");
+})();
+</script>
+</body>
+</html>
